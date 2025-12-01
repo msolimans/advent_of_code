@@ -81,3 +81,4 @@ Using password method 0x434C49434B, what is the password to open the door?
 
 `Your puzzle answer was 6122.`
 
+ref. https://adventofcode.com/2025/day/1
