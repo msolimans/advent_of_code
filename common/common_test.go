@@ -24,3 +24,22 @@ func TestReadLines(t *testing.T) {
 		}
 	}
 }
+
+func TestReadCommaSeparatedLine(t *testing.T) {
+	values, err := ReadCommaSeparatedLine("./test/comma.txt")
+	if err != nil {
+		t.Fatalf("Expected no error, got %v", err)
+	}
+
+	expectedValues := []string{"apple", "banana", "cherry"}
+
+	if len(values) != len(expectedValues) {
+		t.Fatalf("Expected %d values, got %d", len(expectedValues), len(values))
+	}
+
+	for i, value := range values {
+		if value != expectedValues[i] {
+			t.Errorf("Expected value %d to be %q, got %q", i, expectedValues[i], value)
+		}
+	}
+}
